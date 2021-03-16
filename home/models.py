@@ -45,29 +45,3 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
-
-
-class Item(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-    isSelected = models.BooleanField()
-    picture = models.BinaryField()
-    roomId = models.OneToOneField(
-        "home.Room",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name="item_roomId",
-    )
-
-
-class Room(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-    width = models.IntegerField()
-    length = models.IntegerField()
-    isSelected = models.BooleanField()
